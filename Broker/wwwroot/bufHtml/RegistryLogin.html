@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <!-- Регистрация -->
+    <form asp-anti-forgery="true" action="/Account/Register" method="post">
+
+        <div>
+            <div>
+                <label for="Email">Введите Email</label><br />
+                <input type="text" data-val="true" data-val-required="&#x41D;&#x435; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x43D; Email" id="Email" name="Email" value="" />
+                <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true" />
+            </div>
+            <div>
+                <label for="Password">Введите пароль</label><br />
+                <input type="password" data-val="true" data-val-required="&#x41D;&#x435; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x43D; &#x43F;&#x430;&#x440;&#x43E;&#x43B;&#x44C;" id="Password" name="Password" />
+                <span class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true" />
+            </div>
+            <div>
+                <label for="ConfirmPassword">Повторите пароль</label><br />
+                <input type="password" data-val="true" data-val-equalto="&#x41F;&#x430;&#x440;&#x43E;&#x43B;&#x44C; &#x432;&#x432;&#x435;&#x434;&#x435;&#x43D; &#x43D;&#x435;&#x432;&#x435;&#x440;&#x43D;&#x43E;" data-val-equalto-other="*.Password" id="ConfirmPassword" name="ConfirmPassword" />
+                <span class="field-validation-valid" data-valmsg-for="ConfirmPassword" data-valmsg-replace="true" />
+            </div>
+            <div>
+                <label for="FirstName">Введите Имя</label><br />
+                <input type="text" data-val="true" data-val-required="&#x41D;&#x435; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x43D;&#x43E; &#x418;&#x43C;&#x44F;" id="FirstName" name="FirstName" value="" />
+                <span class="field-validation-valid" data-valmsg-for="FirstName" data-valmsg-replace="true" />
+            </div>
+            <div>
+                <label for="SecondName">Введите Имя</label><br />
+                <input type="text" data-val="true" data-val-required="&#x41D;&#x435; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x43D;&#x430; &#x424;&#x430;&#x43C;&#x438;&#x43B;&#x438;&#x44F;" id="SecondName" name="SecondName" value="" />
+                <span class="field-validation-valid" data-valmsg-for="SecondName" data-valmsg-replace="true" />
+            </div>
+            <div>
+                <input type="submit" value="Регистрация" />
+            </div>
+        </div>
+        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8NSLP786ohpKgxiPhDaJNjJDJkDQgQ0Hm2HULLN6x_qCSzahe9-JlOIvA8wt9pvEJ-K5IjLr2D8skyjYKJmy6BboHIfYCGB_KXFCPjD_1N4r5E4jbQS_9cfpR9mpoBBDBdgTktd28b32NHusb7voq8o" />
+    </form>
+
+
+
+
+
+
+    <!-- Авторизация -->
+
+
+    <form asp-anti-forgery="true" action="/Account/Login" method="post">
+
+        <div>
+            <div class="form-group">
+                <label for="Email">Введите Email</label>
+                <input type="text" data-val="true" data-val-required="&#x41D;&#x435; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x43D; Email" id="Email" name="Email" value="" />
+                <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true" />
+            </div>
+            <div class="form-group">
+                <label for="Password">Введите пароль</label>
+                <input type="password" data-val="true" data-val-required="&#x41D;&#x435; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x43D; &#x43F;&#x430;&#x440;&#x43E;&#x43B;&#x44C;" id="Password" name="Password" />
+                <span class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Войти" class="btn" />
+            </div>
+        </div>
+        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8NSLP786ohpKgxiPhDaJNjKjUuBOjRBAbbxAu3ZQhijFlKhVG4SboL_Dlg9ajFsFL2-wnlmmWfyRv6TiWPNEfnnRryc-91u261SAny68uAee6L-GpTJX7fXLFcIhVpVdwrbihSkuzpbbJ8YbG6NYhlw" />
+    </form>
+
+
+
+
+
+    <!-- Добавление Акции -->
+    <form action="/api/AddShare" method="post">
+        <div class="form-group">
+            <label class="control-label" for="CompanyName">Название Компании</label>
+            <input type="text" class="form-control" id="CompanyName" name="CompanyName" value="" />
+        </div>
+        <div class="form-group">
+            <label class="control-label">Страна : </label>
+            <select name="CountryId" class="form-control">
+                <option value="1">&#x420;&#x43E;&#x441;&#x441;&#x438;&#x44F;</option>
+                <option value="2">&#x421;&#x428;&#x410;</option>
+                <option value="3">&#x42E;&#x436;&#x43D;&#x430;&#x44F; &#x41A;&#x43E;&#x440;&#x435;&#x44F;</option>
+                <option value="4">&#x41A;&#x438;&#x442;&#x430;&#x439;</option>
+                <option value="5">&#x42F;&#x43F;&#x43E;&#x43D;&#x438;&#x44F;</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="ImgSrc">Картинка</label>
+            <input type="text" class="form-control" id="ImgSrc" name="ImgSrc" value="" />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="CurrentPrice">Стоимость акции</label>
+            <input type="number" class="form-control" data-val="true" data-val-number="The field CurrentPrice must be a number." data-val-required="The CurrentPrice field is required." id="CurrentPrice" name="CurrentPrice" value="0" />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Отправить" class="btn btn-default" />
+        </div>
+        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8NSLP786ohpKgxiPhDaJNjKtu1_ySET56cv95g1BKn_MpLUBELPJNg1rJPGFa-Vr6JhmzAf-wYfpWwnO1R56VdHdNPI120WbDLGr47TMWQScCbR5uJfFQu8FomYWa-vOeoSniup_Wicc8RlzLqq0I_A" />
+    </form>
+
+
+
+    <!-- Менюшка -->
+
+    <nav>
+        <ul>
+            <li>
+                <Link to="/">Главная</Link>
+            </li>
+            <li>
+                <Link to="/Registry">Регистрация</Link>
+            </li>
+            <li>
+                <Link to="/Login">Авторизация</Link>
+            </li>
+        </ul>
+    </nav>
+
+
+
+    <nav>
+        <ul class="menu">
+            <li><a href="#!">Home</a></li>
+            <li><a href="#!">About</a></li>
+            <li><a href="#!">Contact</a></li>
+            <li><a href="#!">Faq</a></li>
+        </ul>
+    </nav>
+
+
+
+</body>
+</html>
