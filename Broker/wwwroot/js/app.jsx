@@ -78,27 +78,32 @@ class ShareForm extends React.Component {
     }
     render() {
         return (
-            <form onSubmit={this.onSubmit}>
+            <form className="share-form" onSubmit={this.onSubmit}>
                 <p>
                     <input type="text"
                         placeholder="Название компании"
                         value={this.state.CompanyName}
-                        onChange={this.onCompanyNameChange} />
+                        onChange={this.onCompanyNameChange}
+                        className="input input-text"
+                    />
                     <br />
-                    <label id="validAddShareCompanyName"></label>
+                    <label className="text-red" id="validAddShareCompanyName"></label>
                 </p>
                 <p>
                     <input type="text"
                         placeholder="URL логотипа"
                         value={this.state.ImgSrc}
-                        onChange={this.onImgSrcChange} />
+                        onChange={this.onImgSrcChange}
+                        className="input input-text"/>
                     <br />
-                    <label id="validAddShareImgSrc"></label>
+                    <label className="text-red" id="validAddShareImgSrc"></label>
                 </p>
                 <p>
                     <label>
-                        Страна:
-                        <select value={this.state.CountryId} onChange={this.onCountryIdChange}>
+                        <span className="text-form-red">Страна:</span>
+                    </label>
+                        <br />
+                        <select value={this.state.CountryId} onChange={this.onCountryIdChange} className="input-select">
                             <option value="0"></option>
                             <option value="2">США</option>
                             <option value="3">Южная Корея</option>
@@ -106,19 +111,20 @@ class ShareForm extends React.Component {
                             <option value="5">Япония</option>
                             <option value="1">Россия</option>
                         </select>
-                    </label>
+                   
                     <br />
-                    <label id="validAddShareCountryId"></label>
+                    <label className="text-red" id="validAddShareCountryId"></label>
                 </p>
                 <p>
                     <input type="number"
                         placeholder="Стоимость акции"
                         value={this.state.CurrentPrice}
-                        onChange={this.onCurrentPriceChange} />
+                        onChange={this.onCurrentPriceChange}
+                        className="input input-text"/>
                     <br />
-                    <label id="validAddSharePrice"></label>
+                    <label className="text-red" id="validAddSharePrice"></label>
                 </p>
-                <input type="submit" value="Сохранить" />
+                <button className="button" type="submit"><span>Добавить</span></button>
             </form>
         );
     }
@@ -173,7 +179,7 @@ class AddSharePage extends React.Component {
     render() {
         if (this.state.Role == "Admin") {
             return (<div>
-                <h1>Добавление акции</h1>
+                <h1 className="text-header-center">Добавление акции</h1>
                 <ShareForm onShareSubmit={this.onAddShare} />
                 <p id="checkAdd"></p>
             </div>);
@@ -299,54 +305,54 @@ class RegistryForm extends React.Component {
     }
     render() {
         return (
-            <form onSubmit={this.onSubmit}>
+            <form className="share-form" onSubmit={this.onSubmit}>
                 <div>
-                    <label for="Email">Введите Email</label><br />
                     <input type="text"
                         placeholder="Email"
                         value={this.state.Email}
-                        onChange={this.onEmailChange} />
+                        onChange={this.onEmailChange}
+                        className="input input-text"/>
                     <br />
                     <label id="validRegisterEmail"></label>
                 </div>
                 <div>
-                    <label for="Password">Введите пароль</label><br />
                     <input type="password"
                         placeholder="Password"
                         value={this.state.Password}
-                        onChange={this.onPasswordChange} />
+                        onChange={this.onPasswordChange}
+                        className="input input-text"/>
                     <br />
                     <label id="validRegisterPassword"></label>
                 </div>
                 <div>
-                    <label for="ConfirmPassword">Повторите пароль</label><br />
                     <input type="password"
-                        placeholder="ConfirmPassword"
+                        placeholder="Confirm Password"
                         value={this.state.ConfirmPassword}
-                        onChange={this.onConfirmPasswordChange} />
+                        onChange={this.onConfirmPasswordChange}
+                        className="input input-text"/>
                     <br />
                     <label id="validRegisterConfirmPassword"></label>
                 </div>
                 <div>
-                    <label for="FirstName">Введите Имя</label><br />
                     <input type="text"
-                        placeholder="FirstName"
+                        placeholder="First Name"
                         value={this.state.FirstName}
-                        onChange={this.onFirstNameChange} />
+                        onChange={this.onFirstNameChange}
+                        className="input input-text"/>
                     <br />
                     <label id="validRegisterFirstName"></label>
                 </div>
                 <div>
-                    <label for="SecondName">Введите Фамилию</label><br />
                     <input type="text"
-                        placeholder="SecondName"
+                        placeholder="Second Name"
                         value={this.state.SecondName}
-                        onChange={this.onSecondNameChange} />
+                        onChange={this.onSecondNameChange}
+                        className="input input-text"/>
                     <br />
                     <label id="validRegisterSecondName"></label>
                 </div>
 
-                <input type="submit" value="Сохранить" />
+                <button className="button" type="submit"><span>Зарегистрироваться</span></button>
             </form>
         );
     }
@@ -361,7 +367,7 @@ class RegistryPage extends React.Component {
 
     render() {
         return (<div>
-            <h1>Регистрация</h1>
+            <h1 className="text-header-center">Регистрация</h1>
             <RegistryForm />
         </div>);
     }
@@ -448,23 +454,24 @@ class LoginForm extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.onSubmit}>
+            <form className="share-form" onSubmit={this.onSubmit}>
                 <div>
-                    <label for="Email">Введите Email</label><br />
                     <input type="text"
                         placeholder="Email"
                         value={this.state.Email}
-                        onChange={this.onEmailChange} />
+                        onChange={this.onEmailChange}
+                        className="input input-text"/>
                 </div>
                 <div>
-                    <label for="Password">Введите пароль</label><br />
                     <input type="password"
                         placeholder="Password"
                         value={this.state.Password}
-                        onChange={this.onPasswordChange} />
+                        onChange={this.onPasswordChange}
+                        className="input input-text"/>
                 </div>
 
-                <input type="submit" value="Войти" />
+                <button className="button" type="submit"><span>Войти</span></button>
+                <Link className="button" to="/Registry"><span>Регистрация</span></Link>
             </form>
         );
     }
@@ -475,10 +482,9 @@ class LoginPage extends React.Component {
         super(props);
     }
     render() {
-        return (<div>
+        return (<div className="login-page">
             <h1>Авторизация</h1>
             <LoginForm />
-            <Link to="/Registry">Регистрация</Link>
         </div>);
     }
 }
@@ -567,14 +573,14 @@ class Portfolio extends React.Component {
     }
 
     render() {
-        return <table>
+        return <table className="table-histotyprice">
             <tr><th>Логотип</th><th>Название компании</th><th>Прибыльность</th><th></th></tr>
             {
                 this.state.Portfolio.map(x => <tr>
                     <td><img height="50" width="50" src={x.imgSrc} /></td>
                     <td><Link to={`/Shares/${x.shareId}`}>{x.companyName}</Link></td>
                     <td>{x.profitability}</td>
-                    <td><button id={JSON.stringify(x)} onClick={this.onSaleClick} >Продать</button></td>
+                    <td><button id={JSON.stringify(x)} onClick={this.onSaleClick} className="button"><span>Продать</span></button></td>
                 </tr>)
             }
         </table>
@@ -621,6 +627,18 @@ class ProfilePage extends React.Component {
         console.log(balance);
     }
 
+    onExitProfile = () => {
+        var cookies = document.cookie.split(";");
+
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i];
+            var eqPos = cookie.indexOf("=");
+            var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+            document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+        }
+    }
+
+    
     getCookie(name) {
         let matches = document.cookie.match(new RegExp(
             "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
@@ -629,13 +647,16 @@ class ProfilePage extends React.Component {
     }
     render() {
         if (this.state.logged) {
-            return (<div>
+            return (<div><div className="share-page">
                 <h1>Профиль</h1>
                 <p> Имя: {this.state.FirstName}</p>
                 <p> Фамилия: {this.state.SecondName}</p>
                 <p> Email: {this.state.Email}</p>
                 <p> Баланс: {this.state.Balance}</p>
-                <Link to="/Balance">Пополнить баланс</Link>
+                <Link to="/Balance" className="button"><span>Пополнить баланс</span></Link>
+                <Link to="/Login" className="button" onClick={this.onExitProfile}><span>Выйти</span></Link>
+                <h2>Мой портфель</h2>
+                </div>
                 <Portfolio onSetBalance={this.onSetBalance} />
             </div>);
         } else {
@@ -715,18 +736,20 @@ class BalanceForm extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.onSubmit}>
+            <form className="share-form" onSubmit={this.onSubmit}>
                 <div>
                     <label>Введмте сумму</label>
                     <input type="number"
                         placeholder="Введите сумму"
                         value={this.state.Balance}
-                        onChange={this.onBalanceChange} />
+                        onChange={this.onBalanceChange}
+                        className="input input-text"/>
                     <br />
                     <label id="validBalance"></label>
                 </div>
 
-                <input type="submit" value="Пополнить" />
+                <button className="button" type="submit"><span>Пополнить</span></button>
+                <Link className="button" to="/Profile"><span>Профиль</span></Link>
             </form>
         );
     }
@@ -737,10 +760,9 @@ class BalancePage extends React.Component {
         super(props);
     }
     render() {
-        return (<div>
-            <h1>Пополнить баланс</h1>
+        return (<div className="share-page">
+            <h1 className="text-header-center">Пополнить баланс</h1>
             <BalanceForm />
-            <Link to="/Profile">Профиль </Link>
         </div>);
     }
 }
@@ -818,7 +840,7 @@ class SharePage extends React.Component {
         return matches ? decodeURIComponent(matches[1]) : 0;
     }
 
-    onSubmitPay(e) {
+    onSubmitPay = (e) => {
         e.preventDefault();
         const data = new FormData();
         data.append("UserId", this.getCookie("idUser"));
@@ -838,7 +860,7 @@ class SharePage extends React.Component {
         xhr.send(data);
     }
 
-    onSubmitDelete(e) {
+    onSubmitDelete = (e) => {
         e.preventDefault();
         const data = new FormData();
         data.append("Id", this.props.match.params.id);
@@ -847,11 +869,11 @@ class SharePage extends React.Component {
 
         xhr.open("DELETE", URI + "api/share/DeleteShare", true);
         xhr.onload = function () {
-            var validDeleteShare = document.getElementById("validDeleteShare");
+            var validPayShare = document.getElementById("validPayShare");
             if (xhr.status === 200) {
-                validDeleteShare.textContent = xhr.responseText;
+                validPayShare.textContent = xhr.responseText;
             } else {
-                validDeleteShare.textContent = "Произошла ошибка, возможно пользователь не зарегистрирован"
+                validPayShare.textContent = "Произошла ошибка, возможно пользователь не зарегистрирован"
             }
         }.bind(this);
         xhr.send(data);
@@ -859,54 +881,53 @@ class SharePage extends React.Component {
 
 
     render() {
-        const listPrice = this.state.HistoryPrice.map(x => <div>
-            <span>Цена: {x.price} руб. </span>
-            <span> Дата изменения: {x.dateHistory}</span>
-        </div>);
+        const listPrice = this.state.HistoryPrice.map(x => <tr>
+            <td>{x.price} руб. </td>
+            <td>{(new Date(x.dateHistory)).toLocaleDateString()}</td>
+        </tr>);
 
 
         if (this.state.Role.role == "Admin") {
-            return <div>
+            return <div className="share-page">
                 <h1>{this.state.Share.CompanyName}</h1>
                 <img src={this.state.Share.ImgSrc} />
-                <p>Страна: {this.state.Country.Name}</p>
-                <p>Текущая цена: {this.state.Share.CurrentPrice}</p>
-                <form onSubmit={this.onSubmitPay}>
-                    <input type="submit" value="Купить" />
-                    <br />
-                    <label id="validPayShare"></label>
-                </form>
-                <form onSubmit={this.onSubmitDelete}>
-                    <input type="submit" value="Удалить" />
-                    <br />
-                    <label id="validDeleteShare"></label>
-                </form>
-                <Link to={`/EditShare/${this.props.match.params.id}`}>Изменить</Link>
+                <p>Страна: <span className="text-red" >{this.state.Country.Name}</span> </p>
+                <p>Текущая цена: <span className="text-red" >{this.state.Share.CurrentPrice}</span> </p>
+                <div className="button" onClick={this.onSubmitPay}><span>Купить</span></div>
+                <div className="button" onClick={this.onSubmitDelete}><span>Удалить</span></div>
+                <Link className="button" to={`/EditShare/${this.props.match.params.id}`}><span>Изменить</span></Link>
+                <p id="validPayShare"></p>
                 <h2>История цен</h2>
-                <div>{listPrice}</div>
+                <table className="table-histotyprice">
+                    <tr><th>Цена</th><th>Дата изменения</th></tr>
+                    {listPrice}
+                </table>
             </div>
         } else if (this.state.Role.role == "User") {
-            return <div>
+            return <div className="share-page">
                 <h1>{this.state.Share.CompanyName}</h1>
                 <img src={this.state.Share.ImgSrc} />
-                <p>Страна: {this.state.Country.Name}</p>
-                <p>Текущая цена: {this.state.Share.CurrentPrice}</p>
-                <form onSubmit={this.onSubmitPay}>
-                    <input type="submit" value="Купить" />
-                    <br />
-                    <label id="validPayShare"></label>
-                </form>
+                <p>Страна: <span className="text-red" >{this.state.Country.Name}</span> </p>
+                <p>Текущая цена: <span className="text-red" >{this.state.Share.CurrentPrice}</span> </p>
+                <div className="button" onClick={this.onSubmitPay}><span>Купить</span></div>
+                <p id="validPayShare"></p>
                 <h2>История цен</h2>
-                <div>{listPrice}</div>
+                <table className="table-histotyprice">
+                    <tr><th>Цена</th><th>Дата изменения</th></tr>
+                    {listPrice}
+                </table>
             </div>
         } else {
-            return <div>
+            return <div className="share-page">
                 <h1>{this.state.Share.CompanyName}</h1>
                 <img src={this.state.Share.ImgSrc} />
-                <p>Страна: {this.state.Country.Name}</p>
-                <p>Текущая цена: {this.state.Share.CurrentPrice}</p>
+                <p>Страна: <span className="text-red" >{this.state.Country.Name}</span> </p>
+                <p>Текущая цена: <span className="text-red" >{this.state.Share.CurrentPrice}</span> </p>
                 <h2>История цен</h2>
-                <div>{listPrice}</div>
+                <table className="table-histotyprice">
+                    <tr><th>Цена</th><th>Дата изменения</th></tr>
+                    {listPrice}
+                </table>
             </div>
         }
     }
@@ -1024,14 +1045,15 @@ class EditSharePage extends React.Component {
     }
 
     render() {
-        return (<div>
+        return (<div className="share-page">
             <h1>Редактирование акции</h1>
-            <form onSubmit={this.onSubmit}>
+            <form className="share-form" onSubmit={this.onSubmit}>
                 <p>
                     <input type="text"
                         placeholder="Название компании"
                         value={this.state.СompanyName}
-                        onChange={this.onСompanyNameChange} />
+                        onChange={this.onСompanyNameChange}
+                        className="input input-text"/>
                     <br />
                     <label id="validAddShareCompanyName"></label>
                 </p>
@@ -1039,14 +1061,16 @@ class EditSharePage extends React.Component {
                     <input type="text"
                         placeholder="URL логотипа"
                         value={this.state.ImgSrc}
-                        onChange={this.onImgSrcChange} />
+                        onChange={this.onImgSrcChange}
+                        className="input input-text"/>
                     <br />
                     <label id="validAddShareImgSrc"></label>
                 </p>
                 <p>
                     <label>
-                        Страна:
-                        <select value={this.state.CountryId} onChange={this.onCountryIdChange}>
+                        <span className="text-form-red">Страна:</span>
+                    </label>
+                    <select value={this.state.CountryId} onChange={this.onCountryIdChange} className="input-select">
                             <option value="0"></option>
                             <option value="2">США</option>
                             <option value="3">Южная Корея</option>
@@ -1054,7 +1078,7 @@ class EditSharePage extends React.Component {
                             <option value="5">Япония</option>
                             <option value="1">Россия</option>
                         </select>
-                    </label>
+                    
                     <br />
                     <label id="validAddShareCountryId"></label>
                 </p>
@@ -1062,11 +1086,12 @@ class EditSharePage extends React.Component {
                     <input type="number"
                         placeholder="Стоимость акции"
                         value={this.state.CurrentPrice}
-                        onChange={this.onCurrentPriceChange} />
+                        onChange={this.onCurrentPriceChange}
+                        className="input input-text"/>
                     <br />
                     <label id="validAddSharePrice"></label>
                 </p>
-                <input type="submit" value="Изменить" />
+                <button className="button" type="submit"><span>Изменить</span></button>
                 <br />
                 <label id="reqEditShare"></label>
             </form>
@@ -1113,10 +1138,7 @@ class MainPage extends React.Component {
             if (xhr.status === 200) {
                 console.log("Запрос отправлен успешно");
                 let json = JSON.parse(xhr.responseText);
-                //this.setState(json);
-                //json.map(x => this.state.push(x));
                 this.setState({ Shares: json })
-                //this.setState(json);
                 console.log(this.state.Shares);
             } else {
                 console.log("Запрос отправлен не успешно");
@@ -1136,8 +1158,8 @@ class MainPage extends React.Component {
         </div>);
 
         return <div>
-            <h1>Главная страница</h1>
-            <div>{listCard}</div>
+            <h1 className="text-header-center">Главная страница</h1>
+            <div className="main-container">{listCard}</div>
         </div>
     }
 }
